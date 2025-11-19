@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project #2 AnimePilgrim</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Project #2 : AnimePilgrim</h1>
+      <p class="subtitle">애니메이션 성지순례 기록 관리 시스템</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#intro">소개</a></li>
+        <li><a href="#form">등록/입력</a></li>
+        <li><a href="#list">목록보기</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- 소개 섹션 -->
+      <section id="intro" class="section-box">
+        <h2>소개</h2>
+        <p>
+          애니메이션, 만화, 게임 등에 등장한 실제 장소를 직접 방문하는 문화
+          현상을 애니메이션 성지순례(聖地巡礼, Seichi Junrei)라고 합니다.
+        </p>
+        <p>
+          실제 애니메이션에 나온 장소들을 제가 직접 가서 찍은 사진들과 기록을
+          관리할 수 있습니다.
+        </p>
+        <p>
+          이 페이지에서는 방문한 성지들을 등록하고, 관리하며, 목록으로 확인할 수
+          있습니다.
+        </p>
+      </section>
+
+      <!-- 등록/입력 섹션 -->
+      <section id="form" class="flex-row">
+        <div class="flex-item form-container">
+          <h2>등록/입력 폼</h2>
+          <form id="pilgrimForm">
+            <div class="form-group">
+              <label for="workTitle">작품 이름 *</label>
+              <input
+                type="text"
+                id="workTitle"
+                name="workTitle"
+                required
+                minlength="2"
+                maxlength="50"
+                placeholder="예: 너의 이름은"
+                aria-describedby="workTitle-hint"
+              />
+              <small id="workTitle-hint">2~50자 이내로 입력하세요.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="location">실제 장소 *</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                required
+                minlength="2"
+                maxlength="100"
+                placeholder="예: 스가 신사"
+                aria-describedby="location-hint"
+              />
+              <small id="location-hint">2~100자 이내로 입력하세요.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="visitDate">방문 날짜 *</label>
+              <input
+                type="date"
+                id="visitDate"
+                name="visitDate"
+                required
+                max="2025-12-31"
+                aria-describedby="visitDate-hint"
+              />
+              <small id="visitDate-hint">실제 방문한 날짜를 선택하세요.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="rating">평점 (1~10) *</label>
+              <input
+                type="number"
+                id="rating"
+                name="rating"
+                required
+                min="1"
+                max="10"
+                value="5"
+                aria-describedby="rating-hint"
+              />
+              <small id="rating-hint">1점에서 10점 사이로 평가하세요.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="category">카테고리 *</label>
+              <select id="category" name="category" required>
+                <option value="">선택하세요</option>
+                <option value="애니메이션">애니메이션</option>
+                <option value="게임">게임</option>
+                <option value="만화">만화</option>
+                <option value="영화">영화</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>태그</label>
+              <div class="tag-group">
+                <label class="tag-label">
+                  <input type="checkbox" name="tag" value="신카이 마코토" />
+                  신카이 마코토
+                </label>
+                <label class="tag-label">
+                  <input type="checkbox" name="tag" value="쿄애니" />
+                  쿄애니
+                </label>
+                <label class="tag-label">
+                  <input type="checkbox" name="tag" value="지브리" />
+                  지브리
+                </label>
+                <label class="tag-label">
+                  <input type="checkbox" name="tag" value="도쿄" />
+                  도쿄
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="memo">메모</label>
+              <textarea
+                id="memo"
+                name="memo"
+                rows="4"
+                maxlength="500"
+                placeholder="방문 소감이나 추가 정보를 입력하세요 (선택)"
+              ></textarea>
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="btn btn-primary">등록</button>
+              <button type="reset" class="btn btn-secondary">초기화</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="flex-item description-container">
+          <h2>폼 설명</h2>
+          <h3>입력 필드 안내</h3>
+          <ul>
+            <li><strong>작품 이름:</strong> 방문한 성지가 나온 작품 제목</li>
+            <li><strong>실제 장소:</strong> 방문한 실제 장소의 이름</li>
+            <li><strong>방문 날짜:</strong> 실제로 방문한 날짜</li>
+            <li><strong>평점:</strong> 1~10점 사이의 개인적 평가</li>
+            <li><strong>카테고리:</strong> 작품의 미디어 유형</li>
+            <li><strong>태그:</strong> 작품과 관련된 추가 분류</li>
+            <li><strong>메모:</strong> 추가적인 소감이나 정보 (선택)</li>
+          </ul>
+
+          <h3>검증 규칙</h3>
+          <ul>
+            <li>필수 항목(*)은 반드시 입력해야 합니다</li>
+            <li>작품 이름과 장소는 2자 이상 입력해야 합니다</li>
+            <li>평점은 1~10 사이의 숫자만 가능합니다</li>
+            <li>방문 날짜는 2025년 12월 31일까지 선택 가능합니다</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 목록 섹션 -->
+      <section id="list" class="section-box">
+        <h2>작품 목록</h2>
+
+        <div class="filter-controls">
+          <button class="btn btn-filter" id="sortByDate">날짜순 정렬</button>
+          <button class="btn btn-filter" id="sortByRating">평점순 정렬</button>
+          <button class="btn btn-filter" id="sortByName">이름순 정렬</button>
+          <button class="btn btn-danger" id="clearAll">전체 삭제</button>
+        </div>
+
+        <div id="cardContainer" class="card-container">
+          <!-- 카드들이 JavaScript로 동적 생성됩니다 -->
+        </div>
+
+        <div class="table-container">
+          <table id="pilgrimTable">
+            <thead>
+              <tr>
+                <th>작품 이름</th>
+                <th>실제 장소</th>
+                <th>방문 날짜</th>
+                <th>평점</th>
+                <th>카테고리</th>
+                <th>관리</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- 데이터가 JavaScript로 동적 생성됩니다 -->
+            </tbody>
+          </table>
+        </div>
+
+        <p class="item-count">총 <span id="itemCount">0</span>개의 기록</p>
+      </section>
+    </main>
+
+    <footer>© 2025 AnimePilgrim. All Rights Reserved.</footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
