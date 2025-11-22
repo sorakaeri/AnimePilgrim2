@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project #2 AnimePilgrim</title>
+    <title>Project #2 애니메이션 성지순례 기록 사이트</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>Project #2 : AnimePilgrim</h1>
-      <p class="subtitle">애니메이션 성지순례 기록 관리 시스템</p>
+      <h1>Project #2 : 애니메이션 성지순례 기록 사이트</h1>
+      <p class="subtitle">애니메이션 성지순례 기록 및 관리</p>
     </header>
 
     <nav>
       <ul>
         <li><a href="#intro">소개</a></li>
         <li><a href="#form">등록/입력</a></li>
-        <li><a href="#list">목록보기</a></li>
+        <li><a href="#list">작품 목록</a></li>
       </ul>
     </nav>
 
@@ -43,6 +43,7 @@
         <div class="flex-item form-container">
           <h2>등록/입력 폼</h2>
           <form id="pilgrimForm">
+            <!-- 작품 이름 입력 필드 -->
             <div class="form-group">
               <label for="workTitle">작품 이름 *</label>
               <input
@@ -57,7 +58,7 @@
               />
               <small id="workTitle-hint">2~50자 이내로 입력하세요.</small>
             </div>
-
+            <!-- 실제 장소 입력 필드 -->
             <div class="form-group">
               <label for="location">실제 장소 *</label>
               <input
@@ -70,7 +71,7 @@
                 placeholder="예: 스가 신사"
                 aria-describedby="location-hint"
               />
-              <small id="location-hint">2~100자 이내로 입력하세요.</small>
+              <small id="location-hint">2~100자 이내로 입력해주세요.</small>
             </div>
 
             <div class="form-group">
@@ -83,11 +84,13 @@
                 max="2025-12-31"
                 aria-describedby="visitDate-hint"
               />
-              <small id="visitDate-hint">실제 방문한 날짜를 선택하세요.</small>
+              <small id="visitDate-hint">
+                실제 방문한 날짜를 선택해주세요.
+              </small>
             </div>
 
             <div class="form-group">
-              <label for="rating">평점 (1~10) *</label>
+              <label for="rating">만족도 (1~10) *</label>
               <input
                 type="number"
                 id="rating"
@@ -98,7 +101,7 @@
                 value="5"
                 aria-describedby="rating-hint"
               />
-              <small id="rating-hint">1점에서 10점 사이로 평가하세요.</small>
+              <small id="rating-hint">1점에서 10점 사이로 평가해주세요.</small>
             </div>
 
             <div class="form-group">
@@ -110,28 +113,6 @@
                 <option value="만화">만화</option>
                 <option value="영화">영화</option>
               </select>
-            </div>
-
-            <div class="form-group">
-              <label>태그</label>
-              <div class="tag-group">
-                <label class="tag-label">
-                  <input type="checkbox" name="tag" value="신카이 마코토" />
-                  신카이 마코토
-                </label>
-                <label class="tag-label">
-                  <input type="checkbox" name="tag" value="쿄애니" />
-                  쿄애니
-                </label>
-                <label class="tag-label">
-                  <input type="checkbox" name="tag" value="지브리" />
-                  지브리
-                </label>
-                <label class="tag-label">
-                  <input type="checkbox" name="tag" value="도쿄" />
-                  도쿄
-                </label>
-              </div>
             </div>
 
             <div class="form-group">
@@ -161,7 +142,6 @@
             <li><strong>방문 날짜:</strong> 실제로 방문한 날짜</li>
             <li><strong>평점:</strong> 1~10점 사이의 개인적 평가</li>
             <li><strong>카테고리:</strong> 작품의 미디어 유형</li>
-            <li><strong>태그:</strong> 작품과 관련된 추가 분류</li>
             <li><strong>메모:</strong> 추가적인 소감이나 정보 (선택)</li>
           </ul>
 

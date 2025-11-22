@@ -214,25 +214,6 @@ main {
   font-size: 0.875rem;
 }
 
-.tag-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.tag-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: normal;
-  cursor: pointer;
-}
-
-.tag-label input[type="checkbox"] {
-  width: auto;
-  cursor: pointer;
-}
-
 /* ============================================
    버튼 스타일
    ============================================ */
@@ -385,21 +366,6 @@ main {
   border-radius: 20px;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-}
-
-.card-tags {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tag-badge {
-  background-color: #e0e7ff;
-  color: #667eea;
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
 }
 
 .card-memo {

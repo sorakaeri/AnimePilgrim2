@@ -2,13 +2,12 @@
 // AnimePilgrim 클래스 정의
 // ============================================
 class AnimePilgrim {
-  constructor(workTitle, location, visitDate, rating, category, tags, memo) {
+  constructor(workTitle, location, visitDate, rating, category, memo) {
     this.workTitle = workTitle;
     this.location = location;
     this.visitDate = visitDate;
     this.rating = rating;
     this.category = category;
-    this.tags = tags;
     this.memo = memo;
     this.id = Date.now() + Math.random(); // 고유 ID 생성
   }
@@ -29,13 +28,6 @@ class AnimePilgrim {
     card.className = "pilgrim-card";
     card.dataset.id = this.id;
 
-    const tagsHTML =
-      this.tags.length > 0
-        ? `<div class="card-tags">${this.tags
-            .map((tag) => `<span class="tag-badge">${tag}</span>`)
-            .join("")}</div>`
-        : "";
-
     const memoHTML = this.memo
       ? `<div class="card-memo" id="memo-${this.id}"><strong>메모:</strong> ${this.memo}</div>`
       : "";
@@ -55,7 +47,6 @@ class AnimePilgrim {
           <span>${this.getFormattedDate()}</span>
         </div>
         <span class="card-category">${this.category}</span>
-        ${tagsHTML}
         ${memoHTML}
       </div>
       <div class="card-footer">
@@ -211,10 +202,6 @@ form.addEventListener("submit", function (e) {
   const category = document.getElementById("category").value;
   const memo = document.getElementById("memo").value.trim();
 
-  // 태그 가져오기 (체크된 항목만)
-  const tagCheckboxes = document.querySelectorAll('input[name="tag"]:checked');
-  const tags = Array.from(tagCheckboxes).map((checkbox) => checkbox.value);
-
   // 새 객체 생성
   const newPilgrim = new AnimePilgrim(
     workTitle,
@@ -222,7 +209,6 @@ form.addEventListener("submit", function (e) {
     visitDate,
     rating,
     category,
-    tags,
     memo
   );
 
